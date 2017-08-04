@@ -2,6 +2,10 @@ Given(/^inicie el juego$/) do
     visit("/")
 end
 
+Then(/^debo ver "([^"]*)"$/) do |texto|
+  expect(page.body).to match /#{texto}/m
+end
+
 Then(/^debo ver el tablero$/) do
     expect(page).to have_xpath("//table[@id=\"tablero\"]")
 end
