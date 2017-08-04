@@ -4,6 +4,7 @@ require './lib/game'
 
 get '/' do
     game = Game.new 6,6,"tblAtaque"
+    session["game"] = game
     session["tblAtaque"] = game.printTable
     erb :index
 end
