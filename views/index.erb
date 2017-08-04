@@ -8,23 +8,7 @@
 </head>
 <body>
 	<h1>Batalla Espacial</h1>
-    <table id='tblJugador' border=1>
-        <tr>
-            <td id="jA1"></td>
-            <td id="jA2"></td>
-            <td id="jA3">x</td>
-            <td id="jA4">x</td>
-            <td id="jA5"></td>
-            <td id="jA6"></td>
-        </tr>
-        <tr>
-        <td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr>
-        <td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    </table>     
+    <%= session["tblJugador"]%>    
     <table id='tblAtaque' border=1>
         <tr>
         <td><a id="aA1" href="aA1">aA1</a></td><td></td><td></td><td></td><td></td><td></td>
