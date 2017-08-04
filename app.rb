@@ -11,7 +11,12 @@ get '/' do
 end
 
 get '/ataque/:celda' do |celda|
-	session["game"].atacar (celda)
-	session["tblAtaque"] = game.get_tbl("tblAtaque")
+	resultado = session["game"].atacar (celda)
+
+	if resultado
+		session["msg"] = "Ataque exitoso"
+	else
+		session["msg"] = "Ataque fallido"
+	end
 	erb :index
 end
