@@ -18,4 +18,12 @@ class Game
             <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         </table>'
     end
+
+    def atacar(celda)
+        if celda == "A3" 
+            true
+        else 
+            false
+        end
+    end
 end
