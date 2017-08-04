@@ -3,6 +3,8 @@ class Game
     def initialize alto, ancho, nombre
         @nombre = nombre
         @tabla = Array.new(alto) { Array.new(ancho) }
+        @filas = {0=>1, 1=>2 , 2=>3 , 3 => 4 , 4 => 5 , 5 => 6 }
+        @columnas = {0=>"A", 1=>"B" , 2=>"C" , 3 => "D" , 4 => "E" , 5 => "F" }
         @tablero = {"A1" => false, "A2" => false, "A3" => true , "A4" => false , "A5" => false , "A6" => false, 
         "B1" => false, "B2" => false, "B3" => false , "B4" => false , "B5" => false , "B6" => false, 
         "C1" => false, "C2" => false, "C3" => false , "C4" => false , "C5" => false , "C6" => false, 
@@ -19,11 +21,12 @@ class Game
     def printTable
         tblPintada = "<table id='#{@nombre}' border=1>"
 
-        @tabla.each do |fila|
+        @tabla.each_with_index do |fila, iFila|
             tblPintada = tblPintada + "<tr>"
             
-            fila.each do |columna|
-                tblPintada = tblPintada + "<td></td>"
+            fila.each_with_index do |columna, iCol|
+                position = @columnas[iCol].to_s + @filas[iFila].to_s
+                tblPintada = tblPintada + '<td><a href="/ataque/'+position+'">Atacar ' + position + '</a></td>'
             end
 
             tblPintada = tblPintada + "</tr>"
