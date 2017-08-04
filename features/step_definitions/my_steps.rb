@@ -22,6 +22,10 @@ When(/^hago un ataque en "([^"]*)"$/) do |celda|
 	click_link("#{celda}")
 end
 
-Then(/^debo ver mi ataque registrado en "([^"]*)"$/) do |celda|
-  expect(page.body).to match /#{celda}/m
+Then(/^el link "([^"]*)" debe desaparecer$/) do |arg1|
+	pending #page.should have_no_content(arg1)
+end
+
+Then(/^debo ver una "([^"]*)" en "([^"]*)"$/) do |arg1, arg2|
+  pending # Write code here that turns the phrase above into concrete actions
 end
