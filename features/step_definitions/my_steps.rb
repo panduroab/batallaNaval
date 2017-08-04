@@ -31,8 +31,9 @@ When(/^hago un ataque en "([^"]*)"$/) do |celda|
 	click_link("#{celda}")
 end
 
-Then(/^el link "([^"]*)" debe desaparecer$/) do |arg1|
-	pending #page.should have_no_content(arg1)
+Then(/^el link "([^"]*)" debe desaparecer$/) do |link|
+	expect(page).to not have_xpath("//a[@id=\"#{link}\"]")
+end
 end
 
 Then(/^debo ver una "([^"]*)" en "([^"]*)"$/) do |arg1, arg2|
