@@ -3,10 +3,10 @@ require './config'
 require './lib/game'
 
 get '/' do
-
-    game = Game.new
+    game = Game.new 6,6,"tblAtaque"
     session["game"] = game
     session["tblAtaque"] = game.get_tbl("tblAtaque")
+    #session["tblAtaque"] = game.printTable
     erb :index
 end
 
