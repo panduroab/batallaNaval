@@ -1,21 +1,12 @@
 require 'sinatra'
 require './config'
+require './lib/game'
 
 get '/' do
 
-	session["tblAtaque"] = "
-		<table id='tblAtaque' border=1>
-        <tr>
-        	<td><a id=\"aA1\" href=\"ataque/aA1\">A1</a></td>
-        	<td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-    </table>"
-    erb :index
+    game = Game.new
+    session["tblJugador"] = game.get_tbl("tblJugador")
+   erb :index
 end
 
 get '/ataque/:celda' do |celda|
