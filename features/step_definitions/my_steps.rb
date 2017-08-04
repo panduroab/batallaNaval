@@ -31,11 +31,11 @@ When(/^hago un ataque en "([^"]*)"$/) do |celda|
 	click_link("#{celda}")
 end
 
-Then(/^el link "([^"]*)" debe desaparecer$/) do |link|
-	expect(page).to not have_xpath("//a[@id=\"#{link}\"]")
-end
+Then(/^el link "([^"]*)" debe desaparecer$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
 end
 
 Then(/^debo ver una "([^"]*)" en "([^"]*)"$/) do |arg1, arg2|
   pending # Write code here that turns the phrase above into concrete actions
 end
+
