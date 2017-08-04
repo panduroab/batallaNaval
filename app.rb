@@ -4,7 +4,7 @@ require './lib/game'
 
 get '/' do
     game = Game.new
-    session["tblJugador"] = game.get_tbl("tblJugador")
+    session["tblAtaque"] = game.get_tbl("tblAtaque")
     erb :index
 end
 
