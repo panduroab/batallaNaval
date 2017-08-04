@@ -14,5 +14,3 @@ Scenario: Que mi nave este en el tablero en un posicion fija
     And debo ver el tablero de "Jugador"
     Then debo ver mi nave en la posición "jA3" 
     And debo ver mi nave en la posición "jA4"
-    
-Scenario: Que la nava en el tablero ocupe dos cuadritos
