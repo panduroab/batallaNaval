@@ -26,3 +26,11 @@ end
 Then(/^que el "([^"]*)" tenga (\d+) celdas$/) do |tablero, celdas|
   expect(page).to have_xpath("//table[@id=\"#{tablero}\"]/tr/td", count: celdas)
 end
+
+When(/^hago un ataque en "([^"]*)"$/) do |celda|
+	click_link("#{celda}")
+end
+
+Then(/^debo ver mi ataque registrado en "([^"]*)"$/) do |celda|
+  expect(page.body).to match /#{celda}/m
+end
