@@ -6,14 +6,14 @@ Then(/^debo ver "([^"]*)"$/) do |texto|
   expect(page.body).to match /#{texto}/m
 end
 
-Then(/^debo ver el tablero$/) do
-    expect(page).to have_xpath("//table[@id=\"tablero\"]")
+Then(/^debo ver el "([^"]*)"$/) do |tablero|
+  expect(page).to have_xpath("//table[@id=\"#{tablero}\"]")
 end
 
-Given(/^que el tablero tenga (\d+) filas$/) do |filas|
-    expect(page).to have_xpath('//table/tr', count: filas)
+Then(/^que el "([^"]*)" tenga (\d+) filas$/) do |tablero, filas|
+  expect(page).to have_xpath("//table[@id=\"#{tablero}\"]/tr", count: filas)
 end
 
-Given(/^que el tablero tenga (\d+) celdas$/) do |celdas|
-  expect(page).to have_xpath('//table/tr/td', count: celdas)
+Then(/^que el "([^"]*)" tenga (\d+) celdas$/) do |tablero, celdas|
+  expect(page).to have_xpath("//table[@id=\"#{tablero}\"]/tr/td", count: celdas)
 end
