@@ -5,12 +5,18 @@ require './lib/game'
 get '/' do
     game = Game.new 6,6,"tblAtaque"
     session["game"] = game
-    session["tblAtaque"] = game.printTable
+    session["tblAtaque"] = game.get_tbl("tblAtaque")
+    #session["tblAtaque"] = game.printTable
     erb :index
 end
 
 get '/ataque/:celda' do |celda|
-	session["game"].atacar (celda)
-	session["tblAtaque"] = game.get_tbl("tblAtaque")
+	resultado = session["game"].atacar (celda)
+
+	if resultado
+		session["msg"] = "Ataque exitoso"
+	else
+		session["msg"] = "Ataque fallido"
+	end
 	erb :index
 end
