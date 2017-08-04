@@ -9,13 +9,13 @@ Scenario: Debe aparecer el titulo Batalla Espacial
 
 Scenario: Debo ver el tablero de ataque y que sea de 6 x 6
 	Given inicie el juego 
-	Then debo ver el "tablero_ataque"
-	And que el "tablero_ataque" tenga 6 filas
-    And que el "tablero_ataque" tenga 36 celdas
+	Then debo ver el tablero de "Ataque"
+	And que el "tblAtaque" tenga 6 filas
+    And que el "tblAtaque" tenga 36 celdas
 
 Scenario: Debo poder registrar un ataque exitoso
 	Given inicie el juego
-	And debo ver el "tablero_ataque"
+	And debo ver el tablero de "Ataque"
 	When hago un ataque en "aA1"
 	Then el link "aA1" debe desaparecer
 	And debo ver una "X" en "aA1"
