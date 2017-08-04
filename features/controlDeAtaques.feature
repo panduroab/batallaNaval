@@ -12,3 +12,9 @@ Scenario: Debo ver el tablero de ataque y que sea de 6 x 6
 	Then debo ver el "tablero_ataque"
 	And que el "tablero_ataque" tenga 6 filas
     And que el "tablero_ataque" tenga 36 celdas
+
+Scenario: Debo poder registrar un ataque
+	Given inicie el juego
+	And debo ver el "tablero_ataque"
+	When hago un ataque en "aA1"
+	Then debo ver mi ataque registrado en "A1"
